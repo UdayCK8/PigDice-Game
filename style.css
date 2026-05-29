@@ -1,0 +1,186 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+ background: linear-gradient(135deg, #ff9a9e, #f95a5a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+
+
+.game {
+  width: 90%;
+  max-width: 950px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+}
+
+
+.player {
+  flex: 1;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.player--active {
+  background: rgba(124, 68, 68, 0.5);
+  transform: scale(1.01);
+}
+
+.player--winner {
+  background: linear-gradient(145deg, #38a169, #68d391);
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.6);
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.score {
+  font-size: 5rem;
+  color: #ff4b5c;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.current {
+  background: #ff4b5c;
+  color: #fff;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  width: 160px;
+  margin: 0 auto;
+  margin-top: auto;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.current p:first-child {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 0.3rem;
+}
+
+.current-score {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+
+.controls {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  z-index: 10;
+}
+
+
+.dice {
+  width: 100px;
+  height: 100px;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+}
+
+.dice.roll {
+  transform: rotate(360deg);
+}
+
+.hidden {
+  display: none;
+}
+
+/* Buttons below dice */
+.controls .buttons {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+
+
+.btn {
+  background: #fff;
+  color: #333;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 40px;
+  cursor: pointer;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  background: #f8f8f8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.btn--new {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 40px;
+  font-weight: 600;
+  padding: 10px 28px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn--new:hover {
+  background: #f4f4f4;
+  transform: translateX(-50%) translateY(-2px);
+}
+
+
+.controls .buttons {
+  display: flex;
+  flex-direction: column; 
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.btn--roll,
+.btn--hold {
+  position: static;
+  width: 180px; 
+}
